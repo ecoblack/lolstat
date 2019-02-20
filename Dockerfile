@@ -1,6 +1,6 @@
-FROM ruby:alpine
+FROM ruby:2.5.1
 
-RUN apk add --update build-base postgresql-dev tzdata
+RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs
 RUN gem install rails -v '5.2.2'
 
 WORKDIR /app
